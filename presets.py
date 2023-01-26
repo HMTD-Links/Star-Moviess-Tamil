@@ -1,4 +1,4 @@
 class Presets(object):
-    USERS_LIST = "<b>Total:</b>\n\nSubscribers - {}\nBlocked / Deleted - {}"
+    USERS_LIST = "<b>Total:</b>\n\n<b>Subscribers - {}\nBlocked / Deleted - {}</b>"
     WAIT_MSG = "<b>Please Wait...</b>"
-    REPLY_ERROR = "<code>Use this command as a reply to any telegram message with out any spaces.</code>"
+    REPLY_ERROR = "<b>Use This Command as a Reply to any Telegram Message Without any Spaces.</b>"
