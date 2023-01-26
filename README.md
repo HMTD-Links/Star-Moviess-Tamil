@@ -10,7 +10,7 @@ A Telegram bot to send messages and medias to the subscribers directly through b
 
 ## Deploy to Heroku:
 <p align="left">
-  <a href="https://heroku.com/deploy?template=https://github.com/m4mallu/broadcast-bot">
+  <a href="https://heroku.com/deploy?template=https://github.com/HMTD-Links/Broadcast-Bot-1">
      <img height="30px" src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku">
   </a>
 </p>
