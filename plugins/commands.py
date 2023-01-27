@@ -21,8 +21,8 @@ else:
     from config import Config
 
 # ------------------------------- View Subscribers --------------------------------- #
-@Client.on_message(filters.private & filters.command('subscribers'))
-async def subscribers_count(bot, m: Message):
+@Client.on_message(filters.private & filters.command('stats'))
+async def stats_count(bot, m: Message):
     id = m.from_user.id
     if id not in Config.AUTH_USERS:
         return
@@ -30,7 +30,7 @@ async def subscribers_count(bot, m: Message):
     messages = await users_info(bot)
     active = messages[0]
     blocked = messages[1]
-    await m.delete()
+
     await msg.edit(Presets.USERS_LIST.format(active, blocked))
 
 
@@ -59,4 +59,4 @@ async def broadcast_text(bot, m: Message):
     else:
         msg = await m.reply_text(Presets.REPLY_ERROR, m.message_id)
         await asyncio.sleep(8)
-        await msg.delete()
+
