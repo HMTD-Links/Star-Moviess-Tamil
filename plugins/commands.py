@@ -1,10 +1,3 @@
-#  !/usr/bin/env python3
-#  -*- coding: utf-8 -*-
-#  Name     : broadcast-bot [ Telegram ]
-#  Repo     : https://github.com/m4mallu/broadcast-bot
-#  Author   : Renjith Mangal [ https://t.me/space4renjith ]
-#  Licence  : GPL-3
-
 import os
 import asyncio
 from presets import Presets
@@ -23,13 +16,6 @@ else:
 # ------------------------------- View Subscribers --------------------------------- #
 @Client.on_message(filters.private & filters.command('stats'))
 async def stats_count(bot, m: Message):
-        buttons = [[
-            InlineKeyboardButton('©️ Add me to Your Group', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('💰 Earn Money' , url='https://tnlink.in/ref/KarthikUK'),
-            InlineKeyboardButton('📢 Update Channel', url='https://t.me/Star_Moviess_Tamil')
-            ]
-
     id = m.from_user.id
     if id not in Config.AUTH_USERS:
         return
@@ -58,7 +44,10 @@ async def broadcast_text(bot, m: Message):
                     message_id=m.reply_to_message.message_id,
                     caption=m.reply_to_message.caption,
                     reply_markup=m.reply_to_message.reply_markup
-
+    btn.insert(0,
+        [
+            InlineKeyboardButton(text="📢 Update Channel", url='https://t.me/Star_Moviess_Tamil')
+        ]
                 )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
