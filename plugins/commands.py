@@ -28,7 +28,8 @@ async def stats_count(bot, m: Message):
             ],[
             InlineKeyboardButton('💰 Earn Money' , url='https://tnlink.in/ref/KarthikUK'),
             InlineKeyboardButton('📢 Update Channel', url='https://t.me/Star_Moviess_Tamil')
-            ]
+        ]
+        reply_markup = InlineKeyboardMarkup(buttons)
     id = m.from_user.id
     if id not in Config.AUTH_USERS:
         return
