@@ -50,6 +50,10 @@ async def broadcast_text(bot, m: Message):
             InlineKeyboardButton(text="📢 Update Channel", url='https://t.me/Star_Moviess_Tamil')
         ]
     )
+    try:
+        await query.edit_message_reply_markup(
+            reply_markup=InlineKeyboardMarkup(btn)
+        )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
             except Exception:
