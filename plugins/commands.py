@@ -44,12 +44,7 @@ async def broadcast_text(bot, m: Message):
                     message_id=m.reply_to_message.message_id,
                     caption=m.reply_to_message.caption,
                     reply_markup=m.reply_to_message.reply_markup
-                ),
-    btn.insert(0,
-        [
-            InlineKeyboardButton(text="📢 Update Channel", url='https://t.me/Star_Moviess_Tamil')
-        ]
-    )
+                )
     try:
         await query.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(btn)
