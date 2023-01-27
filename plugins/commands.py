@@ -29,8 +29,11 @@ async def stats_count(bot, m: Message):
     msg = await m.reply_text(Presets.WAIT_MSG)
     messages = await users_info(bot)
     active = messages[0]
-    blocked = messages[1]
-
+    blocked = messages[1]{
+            inline_keyboard:[
+                [{text:'🤖 Bot Updates',url:'t.me/HMTD_Links'}]
+            ]
+            }
     await msg.edit(Presets.USERS_LIST.format(active, blocked))
 
 
