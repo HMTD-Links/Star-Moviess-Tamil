@@ -35,12 +35,12 @@ class Bot(Client):
         me = await self.get_me()
         self.set_parse_mode("html")
         self.LOGGER(__name__).info(
-            f"@{me.username}  started! "
+            f"This Bot {me.first_name} Started..!!"
         )
 
     async def stop(self, *args):
         await super().stop()
-        self.LOGGER(__name__).info("Bot stopped. Bye.")
+        self.LOGGER(__name__).info("Bot Stopped. Bye.!")
 
 
 app = Bot()
