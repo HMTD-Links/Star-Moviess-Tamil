@@ -46,10 +46,6 @@ async def broadcast_text(bot, m: Message):
                     caption=m.reply_to_message.caption,
                     reply_markup=m.reply_to_message.reply_markup
                 )
-    try:
-        await query.edit_message_reply_markup(
-            reply_markup=InlineKeyboardMarkup(btn)
-        )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
             except Exception:
