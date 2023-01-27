@@ -1,7 +1,7 @@
 import os
 import asyncio
 from presets import Presets
-from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
+from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from library.support import users_info
@@ -13,10 +13,7 @@ if bool(os.environ.get("ENV", False)):
 else:
     from config import Config
 
-# ------------------------------- View Subscribers --------------------------------- #
-
-STATS = 
-STATS_BUTTON = 
+# ------------------------------- View Subscribers --------------------------------- # 
 
 @Client.on_message(filters.private & filters.command('stats'))
 async def stats_count(bot, m: Message):
