@@ -8,7 +8,7 @@
 import os
 import asyncio
 from presets import Presets
-from pyrogram.types import Message
+from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from library.support import users_info
@@ -29,11 +29,8 @@ async def stats_count(bot, m: Message):
     msg = await m.reply_text(Presets.WAIT_MSG)
     messages = await users_info(bot)
     active = messages[0]
-    blocked = messages[1]{
-            inline_keyboard:[
-                [{text:'🤖 Bot Updates',url:'t.me/HMTD_Links'}]
-            ]
-            }
+    blocked = messages[1]
+
     await msg.edit(Presets.USERS_LIST.format(active, blocked))
 
 
@@ -54,6 +51,7 @@ async def broadcast_text(bot, m: Message):
                     message_id=m.reply_to_message.message_id,
                     caption=m.reply_to_message.caption,
                     reply_markup=m.reply_to_message.reply_markup
+                    reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('🔥 Join Our Channel 🔥', url='https://t.me/Star_Moviess_Tamil') ] ] )
                 )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
