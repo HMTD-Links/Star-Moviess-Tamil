@@ -195,3 +195,22 @@ async def broadcast_text(bot, m: Message):
         msg = await m.reply_text(Presets.REPLY_ERROR, m.message_id)
         await asyncio.sleep(8)
 
+# ---------------------------------------------------------------- #
+
+                               # Star Movies Tamil
+
+# ------------------------------- Alien Covenant (2017) --------------------------------- #
+
+@Client.on_message(filters.private & filters.command('help'))
+async def alien_covenant(bot, m: Message):
+    id = m.from_user.id
+    user_name = '@' + m.from_user.username if m.from_user.username else None
+    await add_user(id, user_name)
+    await m.reply_text(Presets.ALIEN_COVENANT.format(m.from_user.mention(),
+                                                      Config.SUPPORT_CHAT if Config.SUPPORT_CHAT else "_______"),
+                       parse_mode='html'
+                       ),
+        photo="https://telegra.ph/file/206f9013802376b39ad03.jpg",
+        quote=True
+    )
+
