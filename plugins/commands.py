@@ -33,7 +33,7 @@ TELETIPS_MAIN_MENU_BUTTONS = [
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start_bot(client, message):
-    id = m.from_user.id
+    id = message.from_user.id
     user_name = '@' + message.from_user.username if message.from_user.username else None
     await add_user(id, user_name)
     text = Presets.START
