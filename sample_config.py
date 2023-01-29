@@ -1,11 +1,3 @@
-#  !/usr/bin/env python3
-#  -*- coding: utf-8 -*-
-#  Name     : broadcast-bot [ Telegram ]
-#  Repo     : https://github.com/m4mallu/broadcast-bot
-#  Author   : Renjith Mangal [ https://t.me/space4renjith ]
-#  Licence  : GPL-3
-
-
 import os
 import logging
 
@@ -18,10 +10,10 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 class Config(object):
     # Get a bot token from botfather
-    TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
     # Get from my.telegram.org
-    APP_ID = int(os.environ.get("APP_ID", ""))
+    API_ID = int(os.environ.get("API_ID", ""))
 
     # Get from my.telegram.org
     API_HASH = os.environ.get("API_HASH", "")
