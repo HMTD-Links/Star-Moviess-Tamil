@@ -206,7 +206,7 @@ async def alien_covenant(bot, m: Message):
     id = m.from_user.id
     user_name = '@' + m.from_user.username if m.from_user.username else None
     await add_user(id, user_name)
-    await m.reply_text(Presets.ALIEN_COVENANT.format(m.from_user.mention(),
+    await m.reply_photo(Presets.ALIEN_COVENANT.format(m.from_user.mention(),
                                                       Config.SUPPORT_CHAT if Config.SUPPORT_CHAT else "_______"),
                        parse_mode='html'
                        ),
