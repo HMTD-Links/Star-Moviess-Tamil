@@ -34,7 +34,7 @@ TELETIPS_MAIN_MENU_BUTTONS = [
 @Client.on_message(filters.command('start') & filters.private)
 async def start_bot(client, message):
     id = m.from_user.id
-    user_name = '@' + m.from_user.username if m.from_user.username else None
+    user_name = '@' + message.from_user.username if message.from_user.username else None
     await add_user(id, user_name)
     text = Presets.START
     reply_markup = InlineKeyboardMarkup(TELETIPS_MAIN_MENU_BUTTONS)
@@ -131,10 +131,10 @@ async def callback_query(client: Client, query: CallbackQuery):
 
 @Client.on_message(filters.private & filters.command('help'))
 async def help(bot, m: Message):
-    id = m.from_user.id
-    user_name = '@' + m.from_user.username if m.from_user.username else None
+    id = message.from_user.id
+    user_name = '@' + message.from_user.username if message.from_user.username else None
     await add_user(id, user_name)
-    await m.reply_text(Presets.HELP.format(m.from_user.mention(),
+    await message.reply_text(Presets.HELP.format(message.from_user.mention(),
                                                       Config.SUPPORT_CHAT if Config.SUPPORT_CHAT else "_______"),
                        parse_mode='html',
                        disable_web_page_preview=True
